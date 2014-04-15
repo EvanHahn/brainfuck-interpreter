@@ -21,10 +21,8 @@ def brainfuck(src, input):
                 tape.append(0)
 
         elif character == "<":
-            tape_index -= 1
-            if tape_index < 0:
-                print "Cannot move tape below 0."
-                exit(1)
+            if tape_index > 0:
+                tape_index -= 1
 
         elif character == "+":
             tape[tape_index] += 1
